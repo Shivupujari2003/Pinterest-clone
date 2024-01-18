@@ -1,0 +1,38 @@
+<%- include('./partials/header.ejs') %>
+<style>
+  .error{
+    color: red;
+    text-transform: capitalize;
+    margin:10px 0;
+    text-align: center;
+  }
+  a:hover{
+    color: red;
+    
+  }
+  input:hover{
+    border: 2px rgb(85, 71, 71) solid;
+  }
+  input{
+    border: 1px solid grey;
+  }
+</style>
+  <div  class="w-full h-screen bg-[url('https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=1779&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-center bg-cover flex items-center justify-center">
+    <div class="w-[20-vw]  bg-white px-20 py-10 rounded-[30px]">
+      <h1 class="text-3xl text-center font-semibold text-zinc-700 tracking-loose capitalize leading-none">Welcome to pinterest</h1>
+      
+      <% if(typeof error !== 'undefined' && error.length>0){%> 
+        <p class="error"><%= error %></p>
+      <% } %>
+
+      <form action="/login" method="post">
+        <input class="block mt-2 border-2 rounded-md px-3 py-2 w-full" type="text" name="username" placeholder="username">
+        <input class="block mt-2 border-2 rounded-md px-3 py-2 w-full" type="password" name="password" id="password" placeholder="password">
+        <a class="mt-2 font-semibold text-zinc-500 inline-block" href="">Forgot password?</a>
+        <input class="block mt-2 border-2  px-3 py-2 w-full bg-red-600 text-white rounded-full" type="submit" value="Log in">
+        <p class="text-xs w-[20vw] mx-auto font-semibold text-zinc-700 mt-7 text-center">By continuing ,you agree to pinterest's terms and service;Opens a new tab and acknowledge that you've read our privacy policy notice at collection</p>
+        <a href="/register" class="inline-block mt-5 text-lg font-semibold text-center w-full">Dont have an account ?</a>
+      </form>
+    </div>
+  </div>
+<%- include('./partials/footer.ejs') %>

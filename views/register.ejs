@@ -1,0 +1,30 @@
+<%- include('./partials/header.ejs') %>
+<style>
+  a:hover{
+    color: blue;
+  }
+  input:hover{
+    border: 2px rgb(85, 71, 71) solid;
+  }
+  input{
+    border: 1px solid grey;
+  }
+</style>
+<div class="w-full  bg-[url('https://images.unsplash.com/photo-1464802686167-b939a6910659?q=80&w=2050&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] h-screen bg-zinc-300 bg-center bg-cover flex items-center justify-center">
+    <div class="w-[20-vw]  bg-white px-20 py-10 rounded-[30px]">
+      <h1 class="text-3xl mb-10 text-center font-semibold text-zinc-700 tracking-loose capitalize leading-none">Create new account</h1>
+      <form action="/register" method="post">
+        <input class="block mt-2 border-2 rounded-md px-3 py-2 w-full" type="text" name="username" placeholder="username">
+        <input class="block mt-2 border-2 rounded-md px-3 py-2 w-full" type="text" name="fullname" placeholder="fullname">
+        <input class="block mt-2 border-2 rounded-md px-3 py-2 w-full" type="email" name="email" placeholder="email">
+        <input class="block mt-2 border-2 rounded-md px-3 py-2 w-full" type="tel" name="contact" placeholder="Contact no">
+        <input class="block mt-2 border-2 rounded-md px-3 py-2 w-full" type="password" name="password" id="password" placeholder="password">
+
+        <input class="block mt-5 border-2  px-3 py-2 w-full bg-red-600 text-white rounded-full" type="submit" value="Register">
+        <p class="text-xs w-[20vw] mx-auto font-semibold text-zinc-700 mt-7 text-center">By continuing ,you agree to pinterest's terms and service;Opens a new tab and acknowledge that you've read our privacy policy notice at collection</p>
+        <a href="/" class="inline-block mt-7 text-m font-semibold text-center w-full">Login into existing account</a>
+      </form>
+    </div>
+  </div>
+
+<%- include('./partials/footer.ejs') %>

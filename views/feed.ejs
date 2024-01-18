@@ -1,0 +1,16 @@
+<%- include('./partials/header.ejs') %>         <!--similar to show.ejs but here in foreachloop we use only posts.forEach(elem)-->
+<div class="w-full min-h-screen px-10 py-8 text-white bg-zinc-700">
+    <div class="cards flex flex-wrap gap-10">
+        <% posts.forEach(function(elem){ %>
+            <div class="card w-32">
+                <div class=" w-full h-40 bg-zinc-700 rounded-lg overflow-hidden">
+                    <img class="w-full h-full object-cover" src="/images/uploads/<%= elem.image %>" alt="">  <!--elem is each post-->
+                </div>
+                <h5 class="mt-2 text-sm"><%= elem.title %></h5>
+                <h6 class="text-xs opacity-500">@<%= elem.user.username %></h6>
+            </div>  
+        <% }) %>
+        
+    </div>
+</div>
+<%- include('./partials/footer.ejs') %>
